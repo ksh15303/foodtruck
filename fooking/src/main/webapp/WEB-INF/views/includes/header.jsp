@@ -60,7 +60,7 @@
 
 				<div class="collapse navbar-collapse" id="st-navbar-collapse">
 					<ul class="nav navbar-nav navbar-right" id="menu">
-				    	<li><a href="/home">Home</a></li>
+				    	<li><a href="/">Home</a></li>
 				    	<li><a href="/notice/list">Notice</a></li>
 				    	<li><a href="/imageboard/list">ImageBoard</a></li>
 				    	<li><a href="/pds/list">PDS</a></li>
