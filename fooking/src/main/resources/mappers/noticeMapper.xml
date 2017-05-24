@@ -12,7 +12,7 @@
 	<select id="getList" parameterType = "org.bisun.domain.Criteria" resultType="org.bisun.domain.NoticeVO">
 		select * from tbl_notice where nno>0
 		<include refid="search"></include>
-		order by nno desc limit #{skip}, #{amount}
+		order by nno desc limit #{skip}, #{size}
 
 	</select>
 
