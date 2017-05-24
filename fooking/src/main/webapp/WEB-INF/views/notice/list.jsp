@@ -23,7 +23,7 @@
 								<th><h6 align="center">제목</h6></th>
 								<th><h6 align="center">작성자</h6></th>
 								<th><h6 align="center">작성일</h6></th>
-								<th><h6 align="center">수정일</h6></th>
+							
 							</tr>
 						</thead>
 						<tbody>
@@ -33,7 +33,6 @@
 									<th><h6 align="center"><a class="sview" href="${list.nno}">${list.ntitle}</a></h6></th>
 									<th><h6 align="center">${list.nwriter}</h6></th>
 									<th><h6 align="center">${list.regdate}</h6></th>
-									<th><h6 align="center">${list.updatedate}</h6></th>
 
 								</tr>
 							</c:forEach>
@@ -95,6 +94,16 @@
 					<a href="" class="btn btn-send">Sign Up</a>
 				</div> -->
 <%@include file="../includes/footer.jsp"%>
+
+<script>
+		$(document).ready(function (e) {
+			e.preventDefault;
+			
+			
+			
+		})
+	
+	</script>
 
 </body>
 </html>
