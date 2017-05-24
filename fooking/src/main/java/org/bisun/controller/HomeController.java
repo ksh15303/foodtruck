@@ -22,7 +22,11 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+<<<<<<< HEAD
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
+=======
+	@RequestMapping(value = "/sex", method = RequestMethod.GET)
+>>>>>>> branch 'master' of https://github.com/ditto1097/foodtruck.git
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
