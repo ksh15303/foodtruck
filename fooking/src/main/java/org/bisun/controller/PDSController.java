@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/pds")
+@RequestMapping("/pds/*")
 public class PDSController {
 	
 	@GetMapping("/list")
@@ -13,14 +13,22 @@ public class PDSController {
 		
 	}
 	
-	@GetMapping("/apk")
-	public void apk(){
+	@GetMapping("/apk/newest")
+	public void apkNewest(){
 		
 	}
 	
 	
-	@GetMapping("/previous")
-	public void previous(){
+	@GetMapping("/apk/previous")
+	public void apkPrevious(){
+		
+	}
+	@GetMapping("/festival/list")
+	public void festivalList(){
+		
+	}
+	@GetMapping("/festival/register")
+	public void festivalRegister(){
 		
 	}
 
