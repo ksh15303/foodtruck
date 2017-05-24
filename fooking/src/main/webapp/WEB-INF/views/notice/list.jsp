@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-md-12" style="height:50px">
 				<div class="section-title">
-					<h1>pds</h1>
+					<h1>Notice</h1>
 					<span class="st-border"></span>
 				</div>
 			</div>
@@ -27,88 +27,18 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">
-										PDSList 디자인 테스트 제목&nbsp;<span
-											class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
-									</h6></td>
-								<td><h6 align="center">User00</h6></td>
-								<td><h6 align="center">17-05-20</h6></td>
-								<td><h6 align="center">17-05-24</h6></td>
-							</tr>
-							
+							<c:forEach var="list" items="${list}">
+								<tr>
+									<th><h6 align="center">${list.nno}</h6></th>
+									<th><h6 align="center"><a class="sview" href="${list.nno}">${list.ntitle}</a></h6></th>
+									<th><h6 align="center">${list.nwriter}</h6></th>
+									<th><h6 align="center">${list.regdate}</h6></th>
+									<th><h6 align="center">${list.updatedate}</h6></th>
+
+								</tr>
+							</c:forEach>
 						</tbody>
+
 					</table>
 					<div>
 						<div class="pull-right">
@@ -131,18 +61,19 @@
 
 				</div>
 				<ul class="pagination">
-					<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
-					<li><a href="#">10</a></li>
-					<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+					<c:if test="${pageMaker.prev }">
+							<li><a href="${pageMaker.start -1 }"> << </a></li>
+						</c:if>
+
+						<c:forEach begin="${pageMaker.start }" end="${pageMaker.end }"
+							var="idx">
+							<li class='${idx == pageMaker.current?"active":"" }'><a
+								href="${idx}">${idx}</a></li>
+						</c:forEach>
+
+						<c:if test="${pageMaker.next }">
+							<li><a href="${pageMaker.end +1 }"> >> </a></li>
+						</c:if>
 				</ul>
 			</div>
 		</div>

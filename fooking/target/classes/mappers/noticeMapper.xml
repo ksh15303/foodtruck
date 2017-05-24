@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.bisun.persistence.NoticeDAO">
+
+	<select id="getTime" resultType="String">
+		select now()
+	</select>
+
+	<select id="getList" parameterType = "org.bisun.domain.Criteria" resultType="org.bisun.domain.NoticeVO">
+		select * from tbl_notice where nno>0
+		<include refid="search"></include>
+		order by nno desc limit #{skip}, #{amount}
+
+	</select>
+
+	<insert id = "create" parameterType = "org.bisun.domain.NoticeVO">
+		insert into tbl_notice (ntitle, ncontent, nwriter) values (#{ntitle},#{ncontent},#{nwriter}) 
+	</insert>
+	
+	<select id = "read" parameterType="Integer" resultType="org.bisun.domain.NoticeVO">
+		select * from tbl_notice where nno = #{num}
+	</select>
+	
+	<update id = "modify" parameterType = "org.bisun.domain.NoticeVO">
+		update tbl_notice set ntitle = #{ntitle}, ncontent = #{ncontent}, nwriter = #{nwriter} where nno = #{nno}
+	</update>
+	
+	<delete id="delete" parameterType = "Integer">
+		delete from tbl_notice where nno = #{num}
+	</delete>
+	
+	<select id="listCount" parameterType="org.bisun.domain.Criteria"
+		resultType="Integer">
+		select count(nno) from tbl_notice where nno > 0
+		<include refid="search"></include>
+	</select>
+
+	<sql id="search">
+		<if test="keyword != null">
+			<choose>
+				<when test='type == "n"'> and title like concat ('%', #{keyword}, '%')
+				</when>
+				<when test='type == "c"'> and writer like concat ('%', #{keyword}, '%')
+				</when>
+			</choose>
+		</if>
+	</sql>
+	
+	
+</mapper>
