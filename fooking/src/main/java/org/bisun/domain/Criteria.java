@@ -2,13 +2,9 @@ package org.bisun.domain;
 
 public class Criteria {
 
-	private int page;
-	private int size;
-	private String type;
-	private String keyword;
-	
-	
-	
+	private Integer skip, size = 10, page =1;
+	private String type, keyword;
+
 	public String getType() {
 		return type;
 	}
@@ -25,66 +21,40 @@ public class Criteria {
 		this.keyword = keyword;
 	}
 
-	public Criteria(){
-		this.page = 1;
-		this.size = 10;
-	}
-
-	public Criteria settingPage(int page){
-		if(page <=0){
-			this.page=1;
+	public void setPage(Integer page) {
+		if(page <= 0){
+			page = 1;
 		}
-		return this;
-	}
-	
-	public Criteria settingSize(int size){
-		
-		if(size <= 0 || size <= 5){
-			this.size = 5;
-		}
-		return this;
-	}
-	
-	public int getSkip(){
-		return (this.page -1)*this.size;
-		
-	}
-	public int getAmount(){
-		return this.size;
-		
-	}
-
-
-
-	public int getPage() {
-		return page;
-	}
-
-	public void setPage(int page) {
 		this.page = page;
 	}
 
-	public int getSize() {
+	public Integer getSkip() {
+		return (page-1)*size;
+	}
+
+	public void setSkip(Integer skip) {
+		this.skip = skip;
+	}
+
+	public Integer getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public Integer getPage() {
+		return page;
+	}
+
+	public void setSize(Integer size) {
+		if(size < 0 ){
+			size = 0;
+		}
 		this.size = size;
 	}
 
-	
-	
-	
-	
 	@Override
 	public String toString() {
-		return "Criteria [page=" + page + ", size=" + size + ", type=" + type + ", keyword=" + keyword + "]";
+		return "Criteria [skip=" + skip + ", size=" + size + ", page=" + page + ", type=" + type + ", keyword="
+				+ keyword + "]";
 	}
 
-
-	
-	
-	
-	
-	
 }

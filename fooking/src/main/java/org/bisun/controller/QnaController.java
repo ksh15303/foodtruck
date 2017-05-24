@@ -12,4 +12,5 @@ public class QnaController {
 	public void qnaList(){
 		
 	}
+	
 }
