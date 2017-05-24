@@ -1,6 +1,5 @@
 package org.bisun.controller;
 
-
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -33,5 +32,5 @@ public class NoticeController {
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pm);
 	}
-	
 }
+	

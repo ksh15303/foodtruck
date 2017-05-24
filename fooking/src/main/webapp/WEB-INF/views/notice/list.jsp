@@ -2,52 +2,66 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../includes/header.jsp"%>
 
-<div class="container-fluid" style= "background-image: url('/resources/new-food-truck-2.jpg');" type="image/jpg" >
-	<hr>
-	<div class="row-fluid">
-		<div id='every' class="col-md-6 col-sm-12 col-xs-12">
+<section id="pricing" >
+	<div id="blog" class="container">
 
-			<div class="widget-box">
-				<div class="widget-title">
-					<span class="icon">
-
-						
-							<span><input type="checkbox" id="title-checkbox"
-								name="title-checkbox" style="opacity: 0;"></span>
-						
-					</span> <br> <br> <br>
-
-					<h5>공지사항</h5>
+		<div class="row">
+			<div class="col-md-12" style="height:50px">
+				<div class="section-title">
+					<h1>Notice</h1>
+					<span class="st-border"></span>
 				</div>
-				<div class="widget-content nopadding">
-					<table class="table table-bordered table-striped with-check">
+			</div>
 
+			<div class="col-sm-12" >
+				<div class="st-pricing">
+					<div class="st-border"></div>
+					<table class="table table-hover">
 						<thead>
 							<tr>
-								<br>
-								<th style="text-align: center;">번호</th>
-								<th style="text-align: center;">제목</th>
-								<th style="text-align: center;">글쓴이</th>
-								<th style="text-align: center;">등록날짜</th>
-
+								<th><h6 align="center">번호</h6></th>
+								<th><h6 align="center">제목</h6></th>
+								<th><h6 align="center">작성자</h6></th>
+								<th><h6 align="center">작성일</h6></th>
+								<th><h6 align="center">수정일</h6></th>
 							</tr>
 						</thead>
-
 						<tbody>
 							<c:forEach var="list" items="${list}">
 								<tr>
-									<td>${list.nno}</td>
-									<td><a class="sview" href="${list.nno}">${list.ntitle}</a></td>
-									<td>${list.nwriter}</td>
-									<td>${list.regdate}</td>
+									<th><h6 align="center">${list.nno}</h6></th>
+									<th><h6 align="center"><a class="sview" href="${list.nno}">${list.ntitle}</a></h6></th>
+									<th><h6 align="center">${list.nwriter}</h6></th>
+									<th><h6 align="center">${list.regdate}</h6></th>
+									<th><h6 align="center">${list.updatedate}</h6></th>
 
 								</tr>
 							</c:forEach>
 						</tbody>
 
 					</table>
-					<ul class="pagination pagination-sm no-margin pull-right">
-						<c:if test="${pageMaker.prev }">
+					<div>
+						<div class="pull-right">
+							<a href="/pds/write" class="btn btn-send" style="margin-top: 0px">글작성</a>
+						</div>
+						<div class="blog-search" style="width: 22%">
+
+							<form>
+								<input type="text" name="search"> <span
+									class="pull-left">
+									<button id="submit_btn" class="search-submit" type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+				<ul class="pagination">
+					<c:if test="${pageMaker.prev }">
 							<li><a href="${pageMaker.start -1 }"> << </a></li>
 						</c:if>
 
@@ -60,31 +74,27 @@
 						<c:if test="${pageMaker.next }">
 							<li><a href="${pageMaker.end +1 }"> >> </a></li>
 						</c:if>
-					</ul>
-				</div>
+				</ul>
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 
-<style>
-#every {
-	margin-left: 10cm
-}
-}
-</style>
+<!-- <div class="col-sm-12">
+				<div class="st-pricing text-center">
+					<h5>Basic</h5>
+					<h3>$39</h3>
+					<div class="st-border"></div>
+					<ul>
+						<li>Free Download</li>
+						<li>1000+ Softwear</li>
+						<li>Full Access</li>
+						<li>Free Update</li>
+						<li>Live Support</li>
+					</ul>
+					<a href="" class="btn btn-send">Sign Up</a>
+				</div> -->
 <%@include file="../includes/footer.jsp"%>
-
-<script>
-	$(document).ready(function() {
-		console.log($("#menu"));
-		/* $("#menu").on("click",'li a',function(e){
-			e.preventDefault();
-			
-		}); */
-
-	});
-</script>
 
 </body>
 </html>
