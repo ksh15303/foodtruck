@@ -16,10 +16,9 @@
 				<h6 class="pull-right" id="miniNav">
 					<a href="/" ><i class="glyphicon glyphicon-home"></i></a>&nbsp;
 					<a href="/pds/list">pds</a> / 
-					<a href="/pds/apk/newest">newest apk</a> /
-					previous apk/ 
+					data
 					</h6>
-					<h1>Previous APK</h1>
+					<h1>data</h1>
 					<span class="st-border"></span>
 				</div>
 			</div>

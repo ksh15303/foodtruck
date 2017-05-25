@@ -81,7 +81,7 @@
 		</nav>
 	</header>
 	<!-- /HEADER -->
-	<section id="pricing" style="padding-bottom: 0px;">
+	<section id="pricing" style="padding-bottom: 0px; padding-top:80px;">
 		<div style="text-align: center">
 			<img src="/resources/images/food.jpg">
 		</div>

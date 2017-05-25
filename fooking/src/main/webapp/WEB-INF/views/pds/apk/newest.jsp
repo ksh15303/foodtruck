@@ -9,14 +9,26 @@
 #pdsUL h5 {
 	margin-bottom: 0px;
 }
+
+#miniNav, #miniNav a{
+	color: #BDBDBD;
+}
+
 </style>
 <section id="services">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
+					<h6 class="pull-right" id="miniNav" >
+					<a href="/" ><i class="glyphicon glyphicon-home"></i></a>&nbsp;
+					<a href="/pds/list">pds</a> / 
+					newest apk / 
+					</h6>
 					<h1>Apk Download</h1>
+
 					<span class="st-border"></span>
+
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -48,7 +60,7 @@
 				</p>
 			</div>
 
-			<div class="col-md-8 st-service" style=" height: 460px;">
+			<div class="col-md-8 st-service" style="height: 460px;">
 				<img src="/resources/images/abc.png" width="100%" height="100%">
 			</div>
 

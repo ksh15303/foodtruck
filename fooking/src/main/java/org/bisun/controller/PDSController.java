@@ -31,5 +31,10 @@ public class PDSController {
 	public void festivalRegister(){
 		
 	}
+	@GetMapping("/data/list")
+	public void dataList(){
+		
+	}
+	
 
 }
