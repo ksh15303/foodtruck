@@ -29,5 +29,12 @@ public class NoticeServiceImpl implements NoticeService{
 		return dao.listCount(cri);
 	}
 
+	@Override
+	public void register(NoticeVO vo) {
+
+		dao.create(vo);
+		
+	}
+
 	
 }

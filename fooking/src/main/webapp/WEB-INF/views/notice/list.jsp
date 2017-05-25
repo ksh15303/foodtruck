@@ -41,7 +41,7 @@
 					</table>
 					<div>
 						<div class="pull-right">
-							<a href="/pds/write" class="btn btn-send" style="margin-top: 0px">글작성</a>
+							<a href="/notice/write" class="btn btn-send" style="margin-top: 0px">글작성</a>
 						</div>
 						<div class="blog-search" style="width: 22%">
 
@@ -52,7 +52,7 @@
 							
 								<input type="text" name="keyword" value="${cri.keyword }"> <span class="pull-left">
 								
-									<button id="submit_btn">
+									<button id="submit_btn" class="search-submit">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
@@ -86,17 +86,16 @@
 <%@include file="../includes/footer.jsp"%>
 
 <script>
-		$(document).ready(function () {
+		$(document).ready(function(){
 			
 			
-			$(".pagination li a").on("click", function(e) {
+			 $(".pagination li a").on("click", function(e) {
 				e.preventDefault();
 				$("#hpage").val($(this).attr("href"));
 				$("#f1").submit();
-			});
+			}); 
 			
-			$("#submit_btn").on("click" ,"i", function (e) {
-				console.log("dddd")
+			$("#submit_btn").on("click" , function (e) {
 				e.preventDefault();
 				$("#hpage").val("1");
 				$("#f1").submit();

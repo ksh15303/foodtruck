@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -31,6 +32,20 @@ public class NoticeController {
 
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pm);
+	}
+	
+	@GetMapping("/write")
+	public void register(){
+		
+		
+	}
+	
+	@PostMapping("/write")
+	public String realRegister(NoticeVO vo) throws Exception {
+		
+		service.register(vo);
+
+		return "redirect:/notice/list";
 	}
 }
 	

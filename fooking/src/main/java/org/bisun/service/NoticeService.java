@@ -10,4 +10,6 @@ public interface NoticeService {
 	public List<NoticeVO> showList(Criteria cri);
 	
 	public Integer listCount(Criteria cri);
+	
+	public void register(NoticeVO vo);
 }
