@@ -40,12 +40,7 @@
 
 	<sql id="search">
 		<if test="keyword != null">
-			<choose>
-				<when test='type == "n"'> and title like concat ('%', #{keyword}, '%')
-				</when>
-				<when test='type == "c"'> and writer like concat ('%', #{keyword}, '%')
-				</when>
-			</choose>
+				 and ntitle like concat ('%', #{keyword}, '%')
 		</if>
 	</sql>
 	

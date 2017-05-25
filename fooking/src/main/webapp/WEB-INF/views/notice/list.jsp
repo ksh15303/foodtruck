@@ -45,10 +45,14 @@
 						</div>
 						<div class="blog-search" style="width: 22%">
 
-							<form>
-								<input type="text" name="search"> <span
-									class="pull-left">
-									<button id="submit_btn" class="search-submit" type="submit">
+							<form id = 'f1'>
+								<input type = "hidden" id = "hpage" name = "page" value ="${pageMaker.current}">
+								<input type = "hidden" id = "hsno"  name = "sno"> 
+								
+							
+								<input type="text" name="keyword" value="${cri.keyword }"> <span class="pull-left">
+								
+									<button id="submit_btn">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
@@ -79,29 +83,28 @@
 	</div>
 </section>
 
-<!-- <div class="col-sm-12">
-				<div class="st-pricing text-center">
-					<h5>Basic</h5>
-					<h3>$39</h3>
-					<div class="st-border"></div>
-					<ul>
-						<li>Free Download</li>
-						<li>1000+ Softwear</li>
-						<li>Full Access</li>
-						<li>Free Update</li>
-						<li>Live Support</li>
-					</ul>
-					<a href="" class="btn btn-send">Sign Up</a>
-				</div> -->
 <%@include file="../includes/footer.jsp"%>
 
 <script>
-		$(document).ready(function (e) {
-			e.preventDefault;
+		$(document).ready(function () {
 			
 			
+			$(".pagination li a").on("click", function(e) {
+				e.preventDefault();
+				$("#hpage").val($(this).attr("href"));
+				$("#f1").submit();
+			});
 			
-		})
+			$("#submit_btn").on("click" ,"i", function (e) {
+				console.log("dddd")
+				e.preventDefault();
+				$("#hpage").val("1");
+				$("#f1").submit();
+				
+			});
+			
+			
+		});
 	
 	</script>
 
