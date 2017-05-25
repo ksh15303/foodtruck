@@ -82,7 +82,7 @@
 	</header>
 	<!-- /HEADER -->
 	<section id="pricing" style="padding-bottom: 0px; padding-top:80px;">
-		<div style="text-align: center">
-			<img src="/resources/images/food.jpg">
+		<div style="text-align: center; width: 100%; height: 100px">
+			<img style="width: 100%;" src="/resources/images/bam.jpg">
 		</div>
 	</section>

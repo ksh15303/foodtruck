@@ -9,7 +9,7 @@
 <section id="pricing">
 	<div id="blog" class="container">
 
-		<div class="row">
+		<div class="row col-md-12 st-pricing">
 			<div class="col-md-12" style="height: 50px">
 				<div class="section-title">
 					<h6 class="pull-right" id="miniNav">
@@ -22,7 +22,7 @@
 			</div>
 
 			<div class="col-sm-12">
-				<div class="st-pricing">
+				<div class="st-pricing" style="box-shadow: 0px 0px 18px #ddd;">
 					<div class="st-border"></div>
 					<table class="table table-hover">
 						<thead>

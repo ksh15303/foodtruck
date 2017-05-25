@@ -15,10 +15,10 @@
 }
 
 </style>
-<section id="services">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+<section id="pricing">
+	<div class="container ">
+		<div class="row col-md-12 st-pricing">
+			<div class="col-md-12" >
 				<div class="section-title">
 					<h6 class="pull-right" id="miniNav" >
 					<a href="/" ><i class="glyphicon glyphicon-home"></i>home /</a>&nbsp;
@@ -32,7 +32,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="st-pricing text-center">
+				<div class="st-pricing text-center" style="box-shadow: 0px 0px 18px #ddd;">
 					<h5>Newest Version</h5>
 					<h3>푸드트럭짱</h3>
 					<div class="st-border"></div>
