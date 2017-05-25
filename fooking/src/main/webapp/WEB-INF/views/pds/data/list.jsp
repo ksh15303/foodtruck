@@ -13,8 +13,8 @@
 			<div class="col-md-12" style="height: 50px">
 				<div class="section-title">
 					<h6 class="pull-right" id="miniNav">
-						<a href="/"><i class="glyphicon glyphicon-home"></i></a>&nbsp; <a
-							href="/pds/list">pds</a> / data
+						<a href="/"><i class="glyphicon glyphicon-home"></i>home / </a>
+						<a href="/pds/list">pds</a> / data
 					</h6>
 					<h1>data</h1>
 					<span class="st-border"></span>
@@ -51,9 +51,8 @@
 								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
-											....1&nbsp;&nbsp;<i style="color: #1266FF"
+											....1</a>&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
-										</a>
 									</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>

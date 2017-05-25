@@ -12,7 +12,7 @@
 			<div class="col-md-12">
 				<div class="section-title">
 				<h6 class="pull-right" id="miniNav">
-						<a href="/"><i class="glyphicon glyphicon-home"></i></a>&nbsp;pds
+						<a href="/"><i class="glyphicon glyphicon-home"></i>home / </a>pds
 					</h6>
 					<h1>PDS</h1>
 					<span class="st-border"></span>

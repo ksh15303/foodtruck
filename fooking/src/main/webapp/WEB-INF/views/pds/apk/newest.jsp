@@ -21,7 +21,7 @@
 			<div class="col-md-12">
 				<div class="section-title">
 					<h6 class="pull-right" id="miniNav" >
-					<a href="/" ><i class="glyphicon glyphicon-home"></i></a>&nbsp;
+					<a href="/" ><i class="glyphicon glyphicon-home"></i>home /</a>&nbsp;
 					<a href="/pds/list">pds</a> / 
 					newest apk / 
 					</h6>
