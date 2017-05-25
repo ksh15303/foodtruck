@@ -788,7 +788,8 @@
 	.contact-form{}
 
 	.contact-form input[type="text"],
-	.contact-form input[type="email"]{
+	.contact-form input[type="email"],
+	.contact-form select{
 		border: 1px solid #E8E8E8;
 		padding: 8px 14px;
 		width: 100%;
@@ -801,6 +802,7 @@
 		width: 100%;
 		margin-bottom: 20px;
 	}
+	
 
 
 

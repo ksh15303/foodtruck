@@ -13,4 +13,9 @@ public class QnaController {
 		
 	}
 	
+	@GetMapping("/register")
+	public void qnaReg(){
+		
+	}
+	
 }
