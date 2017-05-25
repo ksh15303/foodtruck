@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../includes/header.jsp"%>
 
-<section id="contact">
+<section id="pricing">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
