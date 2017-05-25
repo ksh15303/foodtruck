@@ -2,10 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../../includes/header.jsp"%>
 <style>
-#miniNav, #miniNav a{
+#miniNav, #miniNav a {
 	color: #BDBDBD;
 }
-
 </style>
 <section id="pricing">
 	<div id="blog" class="container">
@@ -13,10 +12,9 @@
 		<div class="row">
 			<div class="col-md-12" style="height: 50px">
 				<div class="section-title">
-				<h6 class="pull-right" id="miniNav">
-					<a href="/" ><i class="glyphicon glyphicon-home"></i></a>&nbsp;
-					<a href="/pds/list">pds</a> / 
-					data
+					<h6 class="pull-right" id="miniNav">
+						<a href="/"><i class="glyphicon glyphicon-home"></i></a>&nbsp; <a
+							href="/pds/list">pds</a> / data
 					</h6>
 					<h1>data</h1>
 					<span class="st-border"></span>
@@ -29,116 +27,118 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th><h6 align="center">번호</h6></th>
-								<th><h6 align="center">제목</h6></th>
-								<th><h6 align="center">작성자</h6></th>
-								<th><h6 align="center">작성일</h6></th>
-								<th><h6 align="center">수정일</h6></th>
+								<th width="15%"><h6 align="center">작성자</h6></th>
+								<th width="50%"><h6 align="center">제목</h6></th>
+								<th width="15%"><h6 align="center">작성일</h6></th>
+								<th width="10%"><h6 align="center">수정일</h6></th>
+								<th width="10%"><h6 align="center">조회수</h6></th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
 							<tr>
-								<th><h6 align="center">10</h6></th>
+								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
 											class="glyphicon glyphicon-paperclip"></i>
 										</a>
 									</h6></th>
-								<th><h6 align="center">샘플 writer 입니다.</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
+								<th><h6 align="center">10,234</h6></th>
 							</tr>
+
+
 						</tbody>
 
 					</table>
 					<div>
 						<div class="pull-right">
-							<a href="/pds/festival/register" class="btn btn-send"
+							<a href="/pds/data/register" class="btn btn-send"
 								style="margin-top: 0px">글작성</a>
 						</div>
 						<div class="blog-search" style="width: 22%">

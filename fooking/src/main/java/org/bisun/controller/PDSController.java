@@ -12,12 +12,10 @@ public class PDSController {
 	public void list(){
 		
 	}
-	
 	@GetMapping("/apk/newest")
 	public void apkNewest(){
 		
 	}
-	
 	
 	@GetMapping("/apk/previous")
 	public void apkPrevious(){
@@ -33,6 +31,10 @@ public class PDSController {
 	}
 	@GetMapping("/data/list")
 	public void dataList(){
+		
+	}
+	@GetMapping("/data/register")
+	public void dataRegister(){
 		
 	}
 	
