@@ -23,8 +23,13 @@ public class ImageBoardDAOImpl implements ImageBoardDAO {
 	}
 
 	@Override
-	public Integer getTotal() {
-		return session.selectOne(namespace + ".getTotal");
+	public Integer getTotal(Criteria cri) {
+		return session.selectOne(namespace + ".getTotal", cri);
+	}
+
+	@Override
+	public void register(ImageBoardVO vo) {
+		session.insert(namespace + ".register", vo);
 	}
 
 }

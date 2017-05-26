@@ -5,11 +5,34 @@
 
 <mapper namespace="org.bisun.persistence.ImageBoardDAO">
 
+	<sql id="search">
+		<if test="keyword != null">
+			<choose>
+				<when test='type=="t"'>
+					and ititle like concat('%',#{keyword},'%')
+				</when>
+				<when test='type=="c"'>
+					and icontent like concat('%',#{keyword},'%')
+				</when>
+				<when test='type=="w"'>
+					and iwriter like concat('%',#{keyword},'%')
+				</when>
+			</choose>
+		</if>
+	</sql>
+
 	<select id="getList" parameterType="Criteria" resultType="ImageBoardVO">
-	select * from tbl_imageboard where ino > 0 order by ino desc limit #{skip}, #{size}
+		select * from tbl_imageboard where ino > 0
+		<include refid="search"></include>
+		order by ino desc limit #{skip}, #{size}
 	</select>
 
-	<select id="getTotal" resultType="Integer">
-	select count(ino) from tbl_imageboard
+	<select id="getTotal" parameterType="Criteria" resultType="Integer">
+		select count(ino) from tbl_imageboard where ino > 0
+		<include refid="search"></include>
 	</select>
+	
+	<insert id="register" parameterType="ImageBoardVO">
+		insert into tbl_imageboard (ititle, icontent, iwriter, imagename) values (#{ititle}, #{icontent}, #{iwriter}, #{imagename})
+	</insert>
 </mapper>

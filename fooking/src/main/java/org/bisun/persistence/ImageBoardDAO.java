@@ -9,6 +9,8 @@ public interface ImageBoardDAO {
 	
 	public List<ImageBoardVO> getList(Criteria cri);
 	
-	public Integer getTotal();
+	public Integer getTotal(Criteria cri);
+	
+	public void register(ImageBoardVO vo);
 	
 }

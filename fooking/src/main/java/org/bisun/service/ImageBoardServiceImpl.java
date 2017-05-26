@@ -21,8 +21,13 @@ public class ImageBoardServiceImpl implements ImageBoardService {
 	}
 
 	@Override
-	public Integer getTotal() {
-		return dao.getTotal();
+	public Integer getTotal(Criteria cri) {
+		return dao.getTotal(cri);
+	}
+
+	@Override
+	public void register(ImageBoardVO vo) {
+		dao.register(vo);		
 	}
 
 }
