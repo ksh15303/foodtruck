@@ -3,9 +3,9 @@
 <%@include file="../includes/header.jsp"%>
 <!-- CONTACT -->
 	
-	<section id="contact" style="background-color: #EAEAEA;">
+	<section id="contact">
 		<div class="container">
-			<div class="row">
+			<div class="row col-md-12 st-pricing" style="background-color: #EAEAEA;">
 				<div class="col-md-12">
 					<div class="section-title">
 						<h1>문의하기</h1>
@@ -43,8 +43,9 @@
 							<div class="col-sm-12">
 								<textarea name="message" required="required" cols="30" rows="7" placeholder="문의 내용"></textarea>
 							</div>
-							<div class="col-sm-12">
+							<div class="col-sm-12" style="text-align:right;">
 								<input type="submit" name="submit" value="문의하기" class="btn btn-send">
+								<input type="submit" id="qnaCancel" value="취소" class="btn btn-send">
 							</div>
 						</div>
 					</form>
@@ -54,8 +55,15 @@
 	</section>
 	<!-- /CONTACT -->
 
-
-
 <%@include file="../includes/footer.jsp"%>
+
+<script>
+	$(document).ready(function(event){
+		$("#qnaCancel").on("click", function(e){
+			e.preventDefault();
+			history.back();
+		});
+	});
+</script>
 </body>
 </html>

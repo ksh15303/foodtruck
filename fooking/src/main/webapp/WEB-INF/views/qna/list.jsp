@@ -4,17 +4,15 @@
 
 <section id="pricing" >
 	<div id="blog" class="container">
-
 		<div class="row">
-			<div class="col-md-12" style="height:50px">
-				<div class="section-title">
-					<h1>Q&A</h1>
-					<span class="st-border"></span>
-				</div>
-			</div>
-
+		
 			<div class="col-sm-12" >
 				<div class="st-pricing">
+				
+						<div class="section-title">
+							<h1>Q&A</h1>
+							<span class="st-border"></span>
+						</div>
 					<div class="st-border"></div>
 					<table class="table table-hover">
 						<thead>
@@ -42,11 +40,17 @@
 						<div class="pull-right">
 							<a href="/qna/register" class="btn btn-send" style="margin-top: 0px">글작성</a>
 						</div>
-						<div class="blog-search" style="width: 22%">
-
-							<form>
-								<input type="text" name="search"> <span
-									class="pull-left">
+						<div class="blog-search" style="width: 30%">
+							<form id='hiddenPage' action="/qna/list" method="get">
+								<input type='hidden' id='hpage' name=page value="${cri.page }">
+								<input type='hidden' id='hsize' name=size value="${cri.size }">
+								
+								<select name='type'>
+					            		<option value='x' ${cri.type eq 'x' ? "selected":"" }>-----</option>
+					            		<option value='keytitle' ${cri.type eq 'n' ? "selected":"" }>제목 찾기</option>
+					            		<option value='keyqwriter' ${cri.type eq 'c' ? "selected":"" }>작성자 찾기</option>
+					            </select>
+								<input type="text" name="keyword"> <span class="pull-left">
 									<button id="submit_btn" class="search-submit" type="submit">
 										<i class="fa fa-search"></i>
 									</button>
@@ -59,39 +63,39 @@
 
 				</div>
 				<ul class="pagination">
-					<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
-					<li><a href="#">10</a></li>
-					<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+					<c:if test="${pageMaker.prev }">
+					<li><a href="${pageMaker.start -1 }">&laquo;</a></li>
+					</c:if>
+					<c:forEach begin="${pageMaker.start }" end="${pageMaker.end }" var="idx">
+					<li class='${idx == pageMaker.current?"active":"" }'><a href="${idx }">${idx }</a></li>
+					</c:forEach>
+					<c:if test="${pageMaker.next }">
+					<li><a href="${pageMaker.end +1 }">&raquo;</a></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- <div class="col-sm-12">
-				<div class="st-pricing text-center">
-					<h5>Basic</h5>
-					<h3>$39</h3>
-					<div class="st-border"></div>
-					<ul>
-						<li>Free Download</li>
-						<li>1000+ Softwear</li>
-						<li>Full Access</li>
-						<li>Free Update</li>
-						<li>Live Support</li>
-					</ul>
-					<a href="" class="btn btn-send">Sign Up</a>
-				</div> -->
 <%@include file="../includes/footer.jsp"%>
+
+<script>
+	$(document).ready(function(event){
+		
+		var $hiddenPage = $("#hiddenPage");
+		var $hpage = $("#hpage");
+		
+		$(".pagination li a").on("click", function(e){
+			e.preventDefault();
+			var $this = $(this);
+			$hpage.val($this.attr("href"));
+			$hiddenPage.submit();
+		});
+		
+	});
+	
+</script>
 
 </body>
 </html>

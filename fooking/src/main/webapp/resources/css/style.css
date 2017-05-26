@@ -942,21 +942,32 @@
 	.blog-search{
 		position: relative;
 	}
+	
+	.blog-search select{
+		border: 1px solid #383838; /* #d6d6d6; */
+		color: #8d8d8d;
+		height: 44px;
+		outline: medium none;
+		padding: 0 50px 0 17px;
+		width: 50%;
+		float:left;
+	}
 
 	.blog-search input {
-		border: 1px solid #d6d6d6;
+		border: 1px solid #383838;
 		color: #8d8d8d;
 		height: 44px;
 		outline: medium none;
 		padding: 0 50px 0 17px;
 		width: 100%;
+		
 	}
 
 	.blog-search span {
 		color: #252525;
 		font-size: 12px;
 		position: absolute;
-		right: 10px;
+		right: 20px;
 		top: 50%;
 		transform: translateY(-50%);
 		-moz-transform: translateY(-50%);

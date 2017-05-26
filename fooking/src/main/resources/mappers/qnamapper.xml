@@ -8,8 +8,28 @@
  		select now();
  	</select>
  	
- 	<select id="getList" resultType="org.bisun.domain.QnaVO">
- 		select * from tbl_qna where qno>0
+ 	<sql id="search">
+		<if test="keyword != null">
+			<choose>
+				<when test='type=="keytitle"'>
+					AND qtitle like concat('%',#{keyword},'%')
+				</when>
+				<when test='type=="keyqwriter"'>
+					AND qwriter like concat('%',#{keyword},'%')
+				</when>
+			</choose>
+		</if>
+	</sql>
+	
+	<select id="getTotal" resultType="integer" parameterType="Criteria">
+		select count(qno) from tbl_qna where qno >0
+		<include refid="search"></include>
+	</select>
+ 	
+ 	<select id="getList" resultType="QnaVO" parameterType="Criteria">
+ 		select * from tbl_qna where qno > 0
+ 		<include refid="search"></include>
+ 		order by qno desc limit #{skip}, #{size}
  	</select>
  
  </mapper>

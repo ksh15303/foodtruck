@@ -2,11 +2,14 @@ package org.bisun.service;
 
 import java.util.List;
 
+import org.bisun.domain.Criteria;
 import org.bisun.domain.QnaVO;
 
 public interface QnaService {
 	
-	public List<QnaVO> getList() throws Exception;
+	public List<QnaVO> getList(Criteria cri) throws Exception;
+	
+	public Integer getTotal(Criteria cri)throws Exception;
 	
 	public void register(QnaVO vo) throws Exception;
 	

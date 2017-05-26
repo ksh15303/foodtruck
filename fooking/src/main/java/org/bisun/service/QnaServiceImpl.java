@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.bisun.domain.Criteria;
 import org.bisun.domain.QnaVO;
 import org.bisun.persistence.QnaDAO;
 import org.springframework.stereotype.Repository;
@@ -15,11 +16,15 @@ public class QnaServiceImpl implements QnaService {
 	QnaDAO dao;
 	
 	@Override
-	public List<QnaVO> getList() throws Exception {
-		
-		return dao.getList();
+	public List<QnaVO> getList(Criteria cri) throws Exception {
+		return dao.getList(cri);
 	}
 
+	@Override
+	public Integer getTotal(Criteria cri) throws Exception {
+		return dao.getTotal(cri);
+	}
+	
 	@Override
 	public void register(QnaVO vo) throws Exception {
 		// TODO Auto-generated method stub
@@ -43,5 +48,6 @@ public class QnaServiceImpl implements QnaService {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.bisun.domain.Criteria;
 import org.bisun.domain.QnaVO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
@@ -22,8 +23,14 @@ public class QnaDAOImpl implements QnaDAO {
 	}
 
 	@Override
-	public List<QnaVO> getList() {
-		return sess.selectList(namespace+".getList");
+	public List<QnaVO> getList(Criteria cri) {
+		return sess.selectList(namespace+".getList", cri);
+	}
+	
+
+	@Override
+	public Integer getTotal(Criteria cri) {
+		return sess.selectOne(namespace+".getTotal", cri);
 	}
 
 	@Override
@@ -49,5 +56,6 @@ public class QnaDAOImpl implements QnaDAO {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }
