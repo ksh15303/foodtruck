@@ -9,7 +9,9 @@
 input[type="file"] {
 	
 }
+
 </style>
+
 <section id="pricing">
 	<div id="blog" class="container">
 		<div class="row col-md-12 st-pricing">
@@ -40,7 +42,7 @@ input[type="file"] {
 						<div class="form-group">
 							<i class="glyphicon glyphicon-menu-down" style="color: red"></i>
 							<label>내용</label>
-							<textarea class="form-control" rows="10" cols="12"></textarea>
+							<textarea class="form-control" rows="10" id="ir1" style="width: 100%"></textarea>
 						</div>
 						<div>
 							<i class="glyphicon glyphicon-menu-down" style="color: red"></i>
@@ -52,7 +54,7 @@ input[type="file"] {
 					</form>
 
 
-					<a class="btn btn-send">등록</a> <a class="btn btn-send">취소</a>
+					<a class="btn btn-send" id="regBtn">등록</a> <a class="btn btn-send">취소</a>
 
 				</div>
 			</div>
@@ -60,5 +62,27 @@ input[type="file"] {
 	</div>
 </section>
 <%@include file="../../includes/footer.jsp"%>
+
+<script type="text/javascript" src="js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var oEditors = [];
+	nhn.husky.EZCreator.createInIFrame({
+	    oAppRef: oEditors,
+	    elPlaceHolder: "ir1",
+	    sSkinURI: "bisunEditor.html",
+	    fCreator: "createSEditor2"
+	});
+	
+	$('#regBtn').on('click',function(e){
+		e.preventDefault();
+		oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
+		console.log($('#ir1').val());
+		
+	});
+
+});
+</script>
 </body>
 </html>
