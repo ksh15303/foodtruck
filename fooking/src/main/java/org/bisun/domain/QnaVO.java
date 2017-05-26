@@ -6,8 +6,9 @@ public class QnaVO {
 	
 	private Integer qno;
 	private String qtitle, qcontent, qwriter;
-	private Integer gno, gord, depth, parent;
+	private Integer gno, gord, depth, parent, gubun, secret;
 	private Timestamp regdate, updatedate;
+	
 	public Integer getQno() {
 		return qno;
 	}
@@ -56,6 +57,18 @@ public class QnaVO {
 	public void setParent(Integer parent) {
 		this.parent = parent;
 	}
+	public Integer getGubun() {
+		return gubun;
+	}
+	public void setGubun(Integer gubun) {
+		this.gubun = gubun;
+	}
+	public Integer getSecret() {
+		return secret;
+	}
+	public void setSecret(Integer secret) {
+		this.secret = secret;
+	}
 	public Timestamp getRegdate() {
 		return regdate;
 	}
@@ -71,10 +84,10 @@ public class QnaVO {
 	@Override
 	public String toString() {
 		return "QnaVO [qno=" + qno + ", qtitle=" + qtitle + ", qcontent=" + qcontent + ", qwriter=" + qwriter + ", gno="
-				+ gno + ", gord=" + gord + ", depth=" + depth + ", parent=" + parent + ", regdate=" + regdate
-				+ ", updatedate=" + updatedate + "]";
+				+ gno + ", gord=" + gord + ", depth=" + depth + ", parent=" + parent + ", gubun=" + gubun + ", secret="
+				+ secret + ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
 	}
 	
 	
-
+	
 }

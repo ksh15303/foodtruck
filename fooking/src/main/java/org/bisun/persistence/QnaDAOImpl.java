@@ -22,8 +22,8 @@ public class QnaDAOImpl implements QnaDAO {
 	}
 
 	@Override
-	public List<QnaVO> getList(Integer qno) {
-		return sess.selectList(namespace+".getList", qno);
+	public List<QnaVO> getList() {
+		return sess.selectList(namespace+".getList");
 	}
 
 	@Override

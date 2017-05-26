@@ -8,7 +8,7 @@ public interface QnaDAO {
 	
 	public String getTime();
 	
-	public List<QnaVO> getList(Integer sno);
+	public List<QnaVO> getList();
 	
 	public void create(QnaVO vo);
 	
