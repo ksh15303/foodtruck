@@ -37,5 +37,9 @@ public class ImageBoardController {
 		service.register(vo);		
 		return "redirect:/imageboard/list";
 	}
+	
+	@GetMapping("/view")
+	public void view(@ModelAttribute("cri") Criteria cri, Integer ino){
+	}
 
 }
