@@ -36,5 +36,11 @@ public class NoticeServiceImpl implements NoticeService{
 		
 	}
 
+	@Override
+	public NoticeVO view(Integer nno) {
+		
+		return dao.read(nno);
+	}
+
 	
 }

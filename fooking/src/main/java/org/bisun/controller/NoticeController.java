@@ -9,6 +9,7 @@ import org.bisun.domain.PageMaker;
 import org.bisun.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -46,6 +47,12 @@ public class NoticeController {
 		service.register(vo);
 
 		return "redirect:/notice/list";
+	}
+	
+	@GetMapping("/view")
+	public void view(Integer nno, Model model){
+		
+		model.addAttribute("vo", service.view(nno));
 	}
 }
 	

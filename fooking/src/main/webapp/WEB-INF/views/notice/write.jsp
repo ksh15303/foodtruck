@@ -37,16 +37,15 @@
 <section id="pricing">
 	<div class="container" >
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-sm-9 col-sm-offset-1"  style = "border-bottom: black solid 1px; border-top: black solid 1px;">
+			
+				<div class="st-pricing">
+				
 				<div class="section-title">
 					<h1>Notice Register</h1>
 					<span class="st-border"></span>
 				</div>
-			</div>
-
-			<div class="col-sm-9 col-sm-offset-1"  style = "border-bottom: black solid 1px; border-top: black solid 1px;">
-			
-				<div class="st-pricing">
+				
 					<form class="contact-form" name="contact-form" method="post">
 						<div class="row" >
 
