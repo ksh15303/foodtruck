@@ -44,12 +44,7 @@ input[type="file"] {
 							<label>내용</label>
 							<textarea class="form-control" rows="10" id="ir1" style="width: 100%"></textarea>
 						</div>
-						<div>
-							<i class="glyphicon glyphicon-menu-down" style="color: red"></i>
-							<p class="help-block">업로드할 파일을 선택해주세요</p>
-							<input type="file"> <input type="file"> <input type="file">
-							
-						</div>
+						
 						<div class="st-border" style="margin-top:15px"></div>
 					</form>
 

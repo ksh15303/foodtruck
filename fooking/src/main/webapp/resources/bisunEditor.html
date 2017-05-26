@@ -6,7 +6,9 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <title>네이버 :: Smart Editor 2 &#8482;</title>
+<!--STYLE CSS LINK by bisun  -->
 <link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style2.css" />
 <link href="css/ko_KR/smart_editor2.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 	body { margin: 10px; }
@@ -98,7 +100,7 @@
 <script type="text/javascript" src="./js_src/util/N_DraggableLayer.js" charset="utf-8"></script>
 <!--Remove End-->
 </head>
-<body>
+<body style="margin: 10px">
 
 
 
@@ -623,7 +625,9 @@
 <ul>
 			<li class="husky_seditor_ui_file single_child">
 		    <!-- 버튼 -->
-		    <button type="button" title="파일첨부" class="bisun_file_icon" style='background:url("/resources/img/file.png") no-repeat;'><span class="_buttonRound tool_bg">파일첨부</span></button>
+		    <button id="btnFile" type="button" title="파일첨부" class="bisun_file_icon" style='background:url("/resources/img/file.png") no-repeat;'>
+		    <span class="_buttonRound tool_bg">파일첨부</span>
+		    </button>
 		     <!-- 레이어 -->
 			    
 			</li>
@@ -865,8 +869,18 @@
 			<li><button type="button" class="se2_to_html"><span>HTML</span></button></li>
 			<li><button type="button" class="se2_to_text"><span>TEXT</span></button></li>
 			</ul>
+			
 		</div>
 		<!-- //입력창조절/ 모드전환 -->
+		
+		<!-- Bisun 커스터마이징(파일 업로드 확인창)  -->
+		<input type="file" id="inputFile" style="opacity: 0; overflow: hidden; width: 0px;height: 0px">
+		<div id="fileBox" class="st-pricing" style="margin: 0px;padding: 0px;background-color: #F6F6F6; height: 116px">
+			
+		</div>
+		
+		<!-- Bisun 커스터마이징(파일 업로드 확인창)  -->
+		
 		<hr>
 		<!-- 얼럿 메세지 공통 -->
 		<div class="se2_alert_wrap" style="display:none">
@@ -899,7 +913,40 @@
 	</form>
 </div>
 
-<script type="text/javascript">
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script>
+var inputFile = document.getElementById('inputFile');
+var fileBox = document.getElementById('fileBox');
+var fileCount = 1;
+
+
+//파일첨부 BTN 클릭 이벤트(파일창 열기)
+document.getElementById('btnFile').addEventListener('click',function(e){
+	e.preventDefault();
+	inputFile.click();
+});
+
+
+//파일첨부시 밸류값변경
+inputFile.addEventListener('change',function(e){
+	e.preventDefault();
+	if(fileCount>3){
+		alert("파일은 최대 3개까지 첨부가능합니다.");
+		return;
+	}
+	var fileName = this.value.split('\\')[2];
+	$('#fileBox').append('<div class="st-border" style="margin: 0px"></div>'
+			+'<i class="glyphicon glyphicon-menu-down" style="color: red;padding-left:5px"></i>'
+			+'<label style="font-size: medium;padding: 5px">'
+			+'첨부파일'+fileCount+': '+fileName+'</label>'
+			+'<div class="st-border" style="margin: 0px"></div>');
+	fileCount+=1;
+});
+
+
 if(window.frameElement){
 	jindo.$("se2_sample").style.display = "none";
 }else{
@@ -944,6 +991,8 @@ if(window.frameElement){
 		var nFontSize = 24;
 		oEditor.setDefaultFont(sDefaultFont, nFontSize);
 	}
+	
+
 }
 </script>
 <!--Example End-->
