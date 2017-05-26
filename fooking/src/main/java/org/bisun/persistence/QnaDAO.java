@@ -13,13 +13,13 @@ public interface QnaDAO {
 	
 	public Integer getTotal(Criteria cri);
 	
-	public void create(QnaVO vo);
+	public void qnaCreate(QnaVO vo);
 	
-	public QnaVO read(Integer qno);
+	public QnaVO qnaRead(Integer qno);
 	
-	public void update(QnaVO vo);
+	public void qnaUpdate(QnaVO vo);
 	
-	public void delete(Integer qno);
+	public void qnaDelete(Integer qno);
 	
 
 }

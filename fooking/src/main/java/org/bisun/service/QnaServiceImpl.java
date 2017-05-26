@@ -27,14 +27,12 @@ public class QnaServiceImpl implements QnaService {
 	
 	@Override
 	public void register(QnaVO vo) throws Exception {
-		// TODO Auto-generated method stub
-
+		dao.qnaCreate(vo);
 	}
 
 	@Override
 	public QnaVO findBy(Integer qno) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.qnaRead(qno);
 	}
 
 	@Override

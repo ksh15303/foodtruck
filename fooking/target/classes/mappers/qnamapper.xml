@@ -31,5 +31,13 @@
  		<include refid="search"></include>
  		order by qno desc limit #{skip}, #{size}
  	</select>
- 
+ 	
+ 	<insert id="qnaCreate" parameterType="QnaVO">
+ 		
+ 	</insert>
+ 	
+ 	<select id="qnaRead" parameterType="integer" resultType="QnaVO">
+ 		select * from tbl_qna where qno = #{param}
+ 	</select>
+ 	
  </mapper>

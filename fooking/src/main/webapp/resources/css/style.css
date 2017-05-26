@@ -944,22 +944,20 @@
 	}
 	
 	.blog-search select{
-		border: 1px solid #383838; /* #d6d6d6; */
+		border: 1px solid #535353; /* #d6d6d6; */
+		border-right: none;
 		color: #8d8d8d;
-		height: 44px;
+		height: 40px;
 		outline: medium none;
-		padding: 0 50px 0 17px;
-		width: 50%;
-		float:left;
+		padding: 0 5px 0 10px;
 	}
 
 	.blog-search input {
-		border: 1px solid #383838;
+		border: 1px solid #535353;
 		color: #8d8d8d;
-		height: 44px;
+		height: 40px;
 		outline: medium none;
 		padding: 0 50px 0 17px;
-		width: 100%;
 		
 	}
 
@@ -967,7 +965,7 @@
 		color: #252525;
 		font-size: 12px;
 		position: absolute;
-		right: 20px;
+		left: 26.8%;
 		top: 50%;
 		transform: translateY(-50%);
 		-moz-transform: translateY(-50%);
@@ -985,7 +983,7 @@
 		display: block;
 		height: 27px;
 		position: absolute;
-		right: 40px;
+		left: 26%;
 		top: 50%;
 		transform: translateY(-50%);
 		-moz-transform: translateY(-50%);

@@ -34,25 +34,24 @@ public class QnaDAOImpl implements QnaDAO {
 	}
 
 	@Override
-	public void create(QnaVO vo) {
+	public void qnaCreate(QnaVO vo) {
+		sess.insert(namespace+".qnaCreate");
+
+	}
+
+	@Override
+	public QnaVO qnaRead(Integer qno) {
+		return sess.selectOne(namespace+".qnaRead", qno);
+	}
+
+	@Override
+	public void qnaUpdate(QnaVO vo) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public QnaVO read(Integer qno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void update(QnaVO vo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void delete(Integer qno) {
+	public void qnaDelete(Integer qno) {
 		// TODO Auto-generated method stub
 
 	}

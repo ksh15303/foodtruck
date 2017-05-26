@@ -25,9 +25,9 @@
 						</thead>
 						<tbody>
 						<c:forEach items="${list }" var="list">
-							<tr>
+							<tr data-qno="${list.qno }">
 								<td><h6 align="center">${list.qno }</h6></td>
-								<td><h6 align="center">${list.qtitle }&nbsp;
+								<td><h6 align="left">${list.qtitle }&nbsp;
 								<span class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
 								</h6></td>
 								<td><h6 align="center">${list.qwriter }</h6></td>
@@ -40,25 +40,24 @@
 						<div class="pull-right">
 							<a href="/qna/register" class="btn btn-send" style="margin-top: 0px">글작성</a>
 						</div>
-						<div class="blog-search" style="width: 30%">
+						<div class="blog-search" style="width:80%;">
 							<form id='hiddenPage' action="/qna/list" method="get">
+								<input type='hidden' id='hqno' name=qno>
 								<input type='hidden' id='hpage' name=page value="${cri.page }">
 								<input type='hidden' id='hsize' name=size value="${cri.size }">
 								
-								<select name='type'>
+								<select name='type' style="width:10%; float:left;">
 					            		<option value='x' ${cri.type eq 'x' ? "selected":"" }>-----</option>
-					            		<option value='keytitle' ${cri.type eq 'n' ? "selected":"" }>제목 찾기</option>
-					            		<option value='keyqwriter' ${cri.type eq 'c' ? "selected":"" }>작성자 찾기</option>
+					            		<option value='keytitle' ${cri.type eq 'keytitle' ? "selected":"" }>제목</option>
+					            		<option value='keyqwriter' ${cri.type eq 'keyqwriter' ? "selected":"" }>작성자</option>
 					            </select>
-								<input type="text" name="keyword"> <span class="pull-left">
-									<button id="submit_btn" class="search-submit" type="submit">
+								<input type="text" name="keyword" style="width:20%;" value="${cri.keyword }"> <span class="pull-left">
+									<button id="search_btn" class="search-submit" type="submit">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
 							</form>
-
 						</div>
-
 					</div>
 
 				</div>
@@ -88,9 +87,19 @@
 		
 		$(".pagination li a").on("click", function(e){
 			e.preventDefault();
-			var $this = $(this);
-			$hpage.val($this.attr("href"));
+			$hpage.val($(this).attr("href"));
 			$hiddenPage.submit();
+		});
+		
+		$("#serch_btn").on("click", function(e){
+			e.preventDefault();
+			$hpage.val("1");
+			$hiddenPage.submit();
+		});
+		
+		$(".table tbody td").on("click", function(e){
+			$("#hqno").val($(this).parent().attr("data-qno"));
+			$hiddenPage.attr("action","/qna/view").submit();
 		});
 		
 	});
