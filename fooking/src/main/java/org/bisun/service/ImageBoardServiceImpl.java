@@ -30,4 +30,15 @@ public class ImageBoardServiceImpl implements ImageBoardService {
 		dao.register(vo);		
 	}
 
+	@Override
+	public void addViewCount(Integer ino) {
+		dao.addViewCount(ino);
+		
+	}
+
+	@Override
+	public ImageBoardVO findByIno(Integer ino) {
+		return dao.view(ino);
+	}
+
 }

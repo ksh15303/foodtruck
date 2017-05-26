@@ -142,8 +142,17 @@
 		//제목 클릭시 뷰 전환 이벤트
 		$(".view").on("click",function(e){
 			e.preventDefault();
+			e.stopPropagation();
 			var $f2 = $("#f2");
-			$f2.append("<input type='hidden' name='ino' value='" + $(this).attr("href") +"'>");
+			var $ino = $(this).attr("href");
+			$f2.append("<input type='hidden' name='ino' value='" + $ino +"'>");
+			
+			//뷰카운트 추가
+			$.ajax({
+				url:"/imageboard/viewcount/"+$ino,
+				type:"post"
+			});
+			
 			$f2.attr("action", "/imageboard/view").submit();
 		});
 

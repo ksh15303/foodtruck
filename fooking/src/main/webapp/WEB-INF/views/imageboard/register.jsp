@@ -58,19 +58,18 @@
 
 <script>
 $(document).ready(function() {
-	
+	//리스트로
 	$("#btnList").on("click",function(e){
 		e.preventDefault();
 		$("#f1").submit();
 	});
 	
+	//파일 업로드, 썸네일출력
 	$("#imagename").on("change",function(e){
 		e.preventDefault();
 		var $this = $(this);
 		var formData = new FormData();
 		formData.append("fileName", $this[0].files[0]);
-		console.log($this[0].files[0]);
-		console.log(formData.fileName);
 		
 		$.ajax({
 			url:"/up/upload",
@@ -79,8 +78,6 @@ $(document).ready(function() {
 			contentType:false,
 			type:'post',
 			success:function(result){
-				console.log("upload completed.....");
-				console.log(result);
 				$("#prevImg").attr("src","/up/display?fileName="+ result);
 				$("#filename").val(result);
 			}

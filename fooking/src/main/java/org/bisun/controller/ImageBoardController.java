@@ -9,8 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/imageboard/*")
@@ -39,7 +42,13 @@ public class ImageBoardController {
 	}
 	
 	@GetMapping("/view")
-	public void view(@ModelAttribute("cri") Criteria cri, Integer ino){
+	public void view(@ModelAttribute("cri") Criteria cri, Integer ino, Model model){
+		model.addAttribute("vo", service.findByIno(ino));		
+	}
+	
+	@PostMapping("/viewcount/{ino}")
+	public void addviewcount(@PathVariable("ino") Integer ino){
+		service.addViewCount(ino);
 	}
 
 }

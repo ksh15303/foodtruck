@@ -32,4 +32,13 @@ public class ImageBoardDAOImpl implements ImageBoardDAO {
 		session.insert(namespace + ".register", vo);
 	}
 
+	@Override
+	public void addViewCount(Integer ino) {
+		session.update(namespace + ".addViewCount", ino);		
+	}
+
+	@Override
+	public ImageBoardVO view(Integer ino) {
+		return session.selectOne(namespace + ".view", ino);
+	}
 }

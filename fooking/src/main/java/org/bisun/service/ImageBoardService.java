@@ -13,4 +13,7 @@ public interface ImageBoardService {
 	
 	public void register(ImageBoardVO vo);
 	
+	public void addViewCount(Integer ino);
+	
+	public ImageBoardVO findByIno(Integer ino);
 }

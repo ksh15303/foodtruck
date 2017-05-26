@@ -35,4 +35,12 @@
 	<insert id="register" parameterType="ImageBoardVO">
 		insert into tbl_imageboard (ititle, icontent, iwriter, imagename) values (#{ititle}, #{icontent}, #{iwriter}, #{imagename})
 	</insert>
+	
+	<update id="addViewCount" parameterType="Integer">
+		update tbl_imageboard set viewcount = viewcount + 1 where ino = #{num} 
+	</update>
+	
+	<select id="view" parameterType="Integer" resultType="ImageBoardVO">
+		select * from tbl_imageboard where ino = #{num}
+	</select>
 </mapper>

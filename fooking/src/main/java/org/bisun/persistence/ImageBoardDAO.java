@@ -13,4 +13,7 @@ public interface ImageBoardDAO {
 	
 	public void register(ImageBoardVO vo);
 	
+	public void addViewCount(Integer ino);
+	
+	public ImageBoardVO view(Integer ino);
 }
