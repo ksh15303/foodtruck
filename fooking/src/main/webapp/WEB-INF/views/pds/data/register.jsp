@@ -67,6 +67,7 @@ input[type="file"] {
 <script type="text/javascript">
 $(document).ready(function(){
 	
+	//textarea editor 임.
 	var oEditors = [];
 	nhn.husky.EZCreator.createInIFrame({
 	    oAppRef: oEditors,
@@ -75,11 +76,11 @@ $(document).ready(function(){
 	    fCreator: "createSEditor2"
 	});
 	
+	//등록버튼 click event.
 	$('#regBtn').on('click',function(e){
 		e.preventDefault();
 		oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
 		console.log($('#ir1').val());
-		
 	});
 
 });
