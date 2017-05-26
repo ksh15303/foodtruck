@@ -17,10 +17,10 @@
     transition: all 0.2s ease-in-out;
 }
 
-#ad {
+#cancle {
 	display: inline-block;
     padding: 6px 12px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.42857143;
@@ -69,7 +69,7 @@
 							
 								<input type="submit" name="submit" value="등록하기"
 									class="btn btn-send"> 
-								<a id = "ad" href = "/notice/list" type = "button" class = "btn btn-send"> 취소 </a>
+								<input id = "cancle" href = "/notice/list?page=" type = "button" class = "btn btn-send" value="취소">
 
 							</div>
 						</div>
@@ -83,6 +83,15 @@
 
 <%@include file="../includes/footer.jsp"%>
 
+<script>
+	$(document).ready(function () {
+		
+		$("#cancle").on("click", function (e) {
+			e.preventDefault();
+			history.back();
+		});
+	});
 
+</script>
 </body>
 </html>

@@ -26,15 +26,16 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach items="${list }" var="list">
 							<tr>
-								<td><h6 align="center">10</h6></td>
-								<td><h6 align="center">PDSList 디자인 테스트 제목&nbsp;
+								<td><h6 align="center">${list.qno }</h6></td>
+								<td><h6 align="center">${list.qtitle }&nbsp;
 								<span class="glyphicon glyphicon-paperclip" style="color: #00B4DB;"></span>
 								</h6></td>
-								<td><h6 align="center">User00</h6></td>
+								<td><h6 align="center">${list.qwriter }</h6></td>
 								<td><h6 align="center">17-05-20</h6></td>
 							</tr>
-							
+						</c:forEach>	
 						</tbody>
 					</table>
 					<div>
