@@ -44,10 +44,11 @@ input[type="file"] {
 						</div>
 						<div>
 							<i class="glyphicon glyphicon-menu-down" style="color: red"></i>
-							<input type="file"> <input type="file"> <input type="file">
 							<p class="help-block">업로드할 파일을 선택해주세요</p>
+							<input type="file"> <input type="file"> <input type="file">
+							
 						</div>
-						<div class="st-border"></div>
+						<div class="st-border" style="margin-top:15px"></div>
 					</form>
 
 

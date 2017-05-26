@@ -28,9 +28,9 @@
 						<thead>
 							<tr>
 								<th width="15%"><h6 align="center">작성자</h6></th>
-								<th width="50%"><h6 align="center">제목</h6></th>
-								<th width="15%"><h6 align="center">작성일</h6></th>
-								<th width="10%"><h6 align="center">수정일</h6></th>
+								<th width="54%"><h6 align="center">제목</h6></th>
+								<th width="8%"><h6 align="center">작성일</h6></th>
+								<th width="8%"><h6 align="center">수정일</h6></th>
 								<th width="10%"><h6 align="center">조회수</h6></th>
 							</tr>
 						</thead>
@@ -39,9 +39,9 @@
 								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
-											....1&nbsp;&nbsp;<i style="color: #1266FF"
-											class="glyphicon glyphicon-paperclip"></i>
-										</a>
+											....1&nbsp;&nbsp;</a><i style="color: #1266FF"
+											class="glyphicon glyphicon-paperclip"> (3)</i>
+										
 									</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
 								<th><h6 align="center">17-05-25</h6></th>
@@ -62,8 +62,8 @@
 								<th><h6 align="center">Writer샘플</h6></th>
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
-											....1&nbsp;&nbsp;<i style="color: #1266FF"
-											class="glyphicon glyphicon-paperclip"></i>
+											....1 &nbsp;&nbsp;<i style="color: #1266FF"
+											class="glyphicon glyphicon-paperclip"> [7]</i>
 										</a>
 									</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
@@ -111,7 +111,7 @@
 								<th><h6 align="center">
 										<a class="sview" href="">디자인sample 타이틀 테스트
 											....1&nbsp;&nbsp;<i style="color: #1266FF"
-											class="glyphicon glyphicon-paperclip"></i>
+											class="glyphicon glyphicon-paperclip"> (13)</i>
 										</a>
 									</h6></th>
 								<th><h6 align="center">17-05-24</h6></th>
