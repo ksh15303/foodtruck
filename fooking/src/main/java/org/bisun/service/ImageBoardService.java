@@ -18,4 +18,6 @@ public interface ImageBoardService {
 	public ImageBoardVO findByIno(Integer ino);
 	
 	public void remove(Integer ino);
+	
+	public void modify(ImageBoardVO vo);
 }

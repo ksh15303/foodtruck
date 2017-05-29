@@ -56,20 +56,17 @@ public class ImageBoardController {
 	}
 	
 	@PostMapping("/view")
-	public String postView(@ModelAttribute("cri") Criteria cri, Integer ino, RedirectAttributes rttr){
-		service.remove(ino);
-		
+	public String postView(@ModelAttribute("cri") Criteria cri, Integer ino, RedirectAttributes rttr){		
 		rttr.addAttribute("page", cri.getPage());
 		rttr.addAttribute("type", cri.getType());
 		rttr.addAttribute("keyword",cri.getKeyword());
-		
 		String fileName = service.findByIno(ino).getImagename();
 		String temp = fileName.replace("_s_", "_");
-		
 		File imgFile = new File("C:\\zzz\\upimages\\" + fileName);
 		File imgFile2 = new File("C:\\zzz\\upimages\\" + temp);
 		imgFile.delete();
 		imgFile2.delete();
+		service.remove(ino);
 		
 		return "redirect:/imageboard/list";
 	}
@@ -77,6 +74,17 @@ public class ImageBoardController {
 	@GetMapping("/update")
 	public void update(@ModelAttribute("cri") Criteria cri, Integer ino, Model model){
 		model.addAttribute("vo", service.findByIno(ino));
+	}
+	
+	@PostMapping("/update")
+	public String postUpdate(Criteria cri, ImageBoardVO vo, RedirectAttributes rttr){
+		service.modify(vo);
+		
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword",cri.getKeyword());
+		
+		return "redirect:/imageboard/list";
 	}
 	
 

@@ -47,4 +47,8 @@
 	<delete id="delete" parameterType="Integer">
 		delete from tbl_imageboard where ino = #{num}
 	</delete>
+	
+	<update id="update" parameterType="ImageBoardVO">
+		update tbl_imageboard set ititle = #{ititle} , icontent = #{icontent}, iwriter=#{iwriter}, imagename=#{imagename}, updatedate = now() where ino = #{ino}
+	</update>
 </mapper>

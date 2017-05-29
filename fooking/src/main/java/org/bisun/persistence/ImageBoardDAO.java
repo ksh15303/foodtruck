@@ -18,4 +18,6 @@ public interface ImageBoardDAO {
 	public ImageBoardVO view(Integer ino);
 	
 	public void delete(Integer ino);
+	
+	public void update(ImageBoardVO vo);
 }

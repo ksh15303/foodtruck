@@ -46,4 +46,9 @@ public class ImageBoardDAOImpl implements ImageBoardDAO {
 	public void delete(Integer ino) {
 		session.delete(namespace + ".delete", ino);
 	}
+
+	@Override
+	public void update(ImageBoardVO vo) {
+		session.update(namespace + ".update", vo);		
+	}
 }

@@ -46,4 +46,9 @@ public class ImageBoardServiceImpl implements ImageBoardService {
 		dao.delete(ino);
 	}
 
+	@Override
+	public void modify(ImageBoardVO vo) {
+		dao.update(vo);		
+	}
+
 }

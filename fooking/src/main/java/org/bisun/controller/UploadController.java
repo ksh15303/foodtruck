@@ -1,6 +1,7 @@
 package org.bisun.controller;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,8 +15,10 @@ import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.imgscalr.Scalr;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -60,6 +63,20 @@ public class UploadController {
 		ImageIO.write(thumb, "jpg", new FileOutputStream("C:\\zzz\\upimages\\"+thumbName));
 		
 		return thumbName;
+	}
+	
+	@DeleteMapping("/delete")
+	@ResponseBody
+	public String delete(@RequestBody String fileName){
+		System.out.println(fileName);
+		String temp = fileName.replace("_s_", "_");
+		System.out.println(temp);
+		File imgFile = new File("C:\\zzz\\upimages\\" + fileName);
+		File imgFile2 = new File("C:\\zzz\\upimages\\" + temp);
+		imgFile.delete();
+		imgFile2.delete();
+		
+		return "success";
 	}
 	
 }
