@@ -82,6 +82,7 @@ $(document).ready(function(){
 	$('#regBtn').on('click',function(e){
 		e.preventDefault();
 		oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
+		console.log(oEditors.getContents);
 		console.log($('#ir1').val());
 		$('#regForm').submit();
 	});

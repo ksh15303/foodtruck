@@ -45,7 +45,7 @@
 									
 									<th>
 										<h6 align="center">
-											<a class="sview" href="/pds/data/view">${data.ptitle}</a><i
+											<a class="sview" href="/pds/data/view">${data.ptitle}  </a><i
 												style="color: #1266FF" class="glyphicon glyphicon-paperclip"></i>
 
 										</h6>
