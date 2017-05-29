@@ -41,4 +41,9 @@ public class ImageBoardDAOImpl implements ImageBoardDAO {
 	public ImageBoardVO view(Integer ino) {
 		return session.selectOne(namespace + ".view", ino);
 	}
+
+	@Override
+	public void delete(Integer ino) {
+		session.delete(namespace + ".delete", ino);
+	}
 }

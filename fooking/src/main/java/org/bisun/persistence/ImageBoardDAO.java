@@ -16,4 +16,6 @@ public interface ImageBoardDAO {
 	public void addViewCount(Integer ino);
 	
 	public ImageBoardVO view(Integer ino);
+	
+	public void delete(Integer ino);
 }

@@ -43,4 +43,8 @@
 	<select id="view" parameterType="Integer" resultType="ImageBoardVO">
 		select * from tbl_imageboard where ino = #{num}
 	</select>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from tbl_imageboard where ino = #{num}
+	</delete>
 </mapper>

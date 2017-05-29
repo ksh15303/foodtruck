@@ -16,4 +16,6 @@ public interface ImageBoardService {
 	public void addViewCount(Integer ino);
 	
 	public ImageBoardVO findByIno(Integer ino);
+	
+	public void remove(Integer ino);
 }

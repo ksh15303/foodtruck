@@ -41,4 +41,9 @@ public class ImageBoardServiceImpl implements ImageBoardService {
 		return dao.view(ino);
 	}
 
+	@Override
+	public void remove(Integer ino) {
+		dao.delete(ino);
+	}
+
 }
