@@ -869,13 +869,14 @@
 			<li><button type="button" class="se2_to_html"><span>HTML</span></button></li>
 			<li><button type="button" class="se2_to_text"><span>TEXT</span></button></li>
 			</ul>
-			
 		</div>
 		<!-- //입력창조절/ 모드전환 -->
 		
 		<!-- Bisun 커스터마이징(파일 업로드 확인창)  -->
+		
 		<input type="file" id="inputFile" style="opacity: 0; overflow: hidden; width: 0px;height: 0px">
-		<div id="fileBox" class="st-pricing" style="margin: 0px;padding: 0px;background-color: #F6F6F6; height: 116px">
+			<div class="se2_conversion_mode"><span>첨부파일</span></div>
+		<div id="fileBox" class="st-pricing" style="margin: 0px;padding: 0px;background-color: #F6F6F6;height:116px">
 			
 		</div>
 		
@@ -922,7 +923,6 @@ var inputFile = document.getElementById('inputFile');
 var fileBox = document.getElementById('fileBox');
 var fileCount = 1;
 
-
 //파일첨부 BTN 클릭 이벤트(파일창 열기)
 document.getElementById('btnFile').addEventListener('click',function(e){
 	e.preventDefault();
@@ -938,12 +938,15 @@ inputFile.addEventListener('change',function(e){
 		return;
 	}
 	var fileName = this.value.split('\\')[2];
-	$('#fileBox').append('<div class="st-border" style="margin: 0px"></div>'
-			+'<i class="glyphicon glyphicon-menu-down" style="color: red;padding-left:5px"></i>'
-			+'<label style="font-size: medium;padding: 5px">'
-			+'첨부파일'+fileCount+': '+fileName+'</label>'
-			+'<div class="st-border" style="margin: 0px"></div>');
-	fileCount+=1;
+	//파일첨부 클릭시 에디터 하단에 첨부파일명 보여주는 HTML
+	if(fileName!=undefined){
+		$('#fileBox').append('<div class="st-border" style="margin: 0px"></div>'
+				+'<i class="glyphicon glyphicon-menu-down" style="color: red;padding-left:5px"></i>'
+				+'<label style="font-size: medium;padding: 5px">'
+				+'첨부파일'+fileCount+': '+fileName+'</label>'
+				);
+		fileCount+=1;
+	}
 });
 
 

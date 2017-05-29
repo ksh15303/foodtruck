@@ -5,6 +5,45 @@
 
 <mapper namespace="org.bisun.persistence.PdsDataDAO">
 	<select id="getList" resultType="PdsDataVO" parameterType="Criteria">
-		select * from tbl_pds_data where pno>0 order by pno desc limit #{skip},#{size}
+		select * from tbl_pds_data where pno>0
+		<if test="keyword != null">
+			<choose>
+				<when test='type=="t"'>
+					and ptitle like concat('%',#{keyword},'%')
+				</when>
+				<when test='type=="w"'>
+					and pwriter like concat('%',#{keyword},'%')
+				</when>
+			</choose>
+		</if>
+		order by pno desc limit #{skip},#{size}
 	</select>
+	
+	<select id="read" parameterType="integer" resultType="PdsDataVO">
+		select * from tbl_pds_data where pno>0 and pno=#{pno}
+	</select>
+	
+	<insert id="create" parameterType="PdsDataVO">
+		insert into tbl_pds_data(ptitle,pcontent,pwriter) values(#{ptitle},#{pcontent},#{pwriter})
+	</insert>
+	
+	<delete id="delete" parameterType="integer">
+		delete from tbl_pds_data where pno>0 and pno=#{pno}
+	</delete>
+	
+	<select id="getTotal" parameterType="Criteria" resultType="Integer">
+		select count(pno) from tbl_pds_data where pno > 0
+		<if test="keyword != null">
+				<choose>
+					<when test='type=="t"'>
+						and ptitle like concat('%',#{keyword},'%')
+					</when>
+					<when test='type=="w"'>
+						and pwriter like concat('%',#{keyword},'%')
+					</when>
+			</choose>
+		</if>
+	</select>
+
+	
 </mapper>

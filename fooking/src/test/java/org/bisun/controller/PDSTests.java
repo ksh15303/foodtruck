@@ -7,7 +7,9 @@ import javax.sql.DataSource;
 
 import org.apache.log4j.Logger;
 import org.bisun.domain.Criteria;
+import org.bisun.domain.PdsDataVO;
 import org.bisun.persistence.PdsDataDAO;
+import org.bisun.service.PdsService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -25,10 +27,39 @@ public class PDSTests {
 	PdsDataDAO dao;
 	
 	@Test
+	public void getTotal(){
+		Criteria cri = new Criteria();
+		cri.setType("t");
+		cri.setKeyword("입니");
+		log.info(dao.getTotalCount(cri));
+	}
+	
+	@Test
+	public void insertTest(){
+		PdsDataVO vo = new PdsDataVO();
+		vo.setPcontent("test내용");
+		vo.setPtitle("제목입니당");
+		vo.setPwriter("작성자용");
+		dao.create(vo);
+	}
+	
+	@Test
+	public void deleteTest(){
+		dao.delete(3061);
+	}
+	
+	@Test
+	public void readTest(){
+		log.info(dao.read(3061));
+	}
+	
+	@Test
 	public void getListTest(){
 		Criteria cri = new Criteria();
-		cri.setPage(1);
-		cri.setSize(50);
+		cri.setPage(0);
+		cri.setSize(10);
+		cri.setType("t");
+		cri.setKeyword("니당");
 		dao.getList(cri).forEach(data->log.info(data));
 	}
 	

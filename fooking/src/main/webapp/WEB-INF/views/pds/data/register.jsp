@@ -30,31 +30,38 @@ input[type="file"] {
 			<div class="col-sm-12">
 				<div class="st-pricing" style="box-shadow: 0px 0px 18px #ddd;">
 					<div class="st-border"></div>
-					<form>
+					<form method="post" id="regForm">
 						<div class="form-group">
 							<i class="glyphicon glyphicon-menu-down" style="color: red"></i>
-							<label>작성자</label> <input type="text" class="form-control" placeholder="writer">
+							<label>작성자</label> <input type="text" class="form-control" placeholder="writer" name="pwriter">
 						</div>
 						<div class="form-group">
 							<i class="glyphicon glyphicon-menu-down" style="color: red"></i>
-							<label>제목</label> <input type="text" class="form-control" placeholder="title">
+							<label>제목</label> <input type="text" class="form-control" placeholder="title" name="ptitle">
 						</div>
 						<div class="form-group">
 							<i class="glyphicon glyphicon-menu-down" style="color: red"></i>
 							<label>내용</label>
-							<textarea class="form-control" rows="10" id="ir1" style="width: 100%"></textarea>
+							<textarea class="form-control" rows="10" id="ir1" style="width: 100%" name="pcontent"></textarea>
 						</div>
 						
 						<div class="st-border" style="margin-top:15px"></div>
 					</form>
 
 
-					<a class="btn btn-send" id="regBtn">등록</a> <a class="btn btn-send">취소</a>
+					<a class="btn btn-send" id="regBtn">등록</a> <a id="cancelBtn" class="btn btn-send">취소</a>
 
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- 파라미터 전송을위한 HiddenForm  -->
+	<form method="get" id="hiddenForm">
+		<input type="hidden" name="keyword" value="${cri.keyword}">
+		<input type="hidden" name="type" value="${cri.type}">
+		<input type="hidden" name="size" value="${cri.size}">
+	  <input type="hidden" name="page" value="${cri.page}">
+	</form>
 </section>
 <%@include file="../../includes/footer.jsp"%>
 
@@ -76,8 +83,17 @@ $(document).ready(function(){
 		e.preventDefault();
 		oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
 		console.log($('#ir1').val());
+		$('#regForm').submit();
 	});
 
+	//취소버튼 click 이벤트
+	$('#cancelBtn').on('click',function(e){
+		e.preventDefault();
+		$('#hiddenForm').attr('action','/pds/data/list').submit();
+	});
+	
+
+	
 });
 </script>
 </body>

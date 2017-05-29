@@ -1,12 +1,26 @@
 package org.bisun.controller;
 
+import org.apache.log4j.Logger;
+import org.bisun.domain.Criteria;
+import org.bisun.domain.PageMaker;
+import org.bisun.domain.PdsDataVO;
+import org.bisun.service.PdsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/pds/*")
 public class PDSController {
+	
+	private Logger log = Logger.getLogger(PDSController.class);
+	
+	@Autowired
+	PdsService service;
 	
 	@GetMapping("/list")
 	public void list(){
@@ -30,11 +44,31 @@ public class PDSController {
 		
 	}
 	@GetMapping("/data/list")
-	public void dataList(){
-		
+	public void dataList(@ModelAttribute("cri")Criteria cri,Model model)throws Exception{
+		model.addAttribute("dataList",service.getDataList(cri));
+		Integer totalCount = service.getTotalCount(cri);
+		if(totalCount==0){
+			model.addAttribute("noSearch","검색 결과가 없습니다.");
+		}
+		PageMaker pageMaker = new PageMaker(cri,totalCount);
+		model.addAttribute("pageMaker",pageMaker);
 	}
 	@GetMapping("/data/register")
-	public void dataRegister(){
+	public void dataRegister(@ModelAttribute("cri")Criteria cri,Model model){
+		//log.info("register Get..............");
+		//log.info(cri);
+	}
+	
+	@PostMapping("/data/register")
+	public String dataRegisterPost(PdsDataVO vo)throws Exception{
+		log.info(vo);
+		service.register(vo);
+		return "redirect:/pds/data/list";
+	}
+	
+	
+	@GetMapping("/data/view")
+	public void dataView(){
 		
 	}
 	

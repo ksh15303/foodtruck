@@ -23,15 +23,15 @@
 			</div>
 
 			<div class="col-sm-12">
-				<div class="st-pricing"
-					style="box-shadow:0px 0px 18px #ddd;">
+				<div class="st-pricing" style="box-shadow: 0px 0px 18px #ddd;">
+					<!-- start -->
 					<div class="col-md-12">
-						<div class="team-member col-md-12"
-							style="height: 170px; background-color: #f5f5f5;">
+						<div class="team-member"
+							style="height: 150px; background-color: #f5f5f5;">
 							<div class="member-image col-md-3"
-								style="padding-left: 0px; padding-right: 0px">
-								<img class="img-responsive" src="images/abc.png" alt=""
-									style="width: 100%">
+								style="padding-left: 0px; padding-right: 0px;">
+								<img class="img-responsive" src="images/abc.png"
+									style="width: 100%; height: 150px">
 								<div class="member-social"></div>
 							</div>
 							<div class="member-info col-md-9">
@@ -48,13 +48,14 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="col-md-12">
-						<div class="team-member col-md-12"
-							style="height: 170px; background-color: #f5f5f5;">
+						<div class="team-member"
+							style="height: 150px; background-color: #f5f5f5;">
 							<div class="member-image col-md-3"
-								style="padding-left: 0px; padding-right: 0px">
-								<img class="img-responsive" src="images/abc.png" alt=""
-									style="width: 100%">
+								style="padding-left: 0px; padding-right: 0px;">
+								<img class="img-responsive" src="images/abc.png"
+									style="width: 100%; height: 150px">
 								<div class="member-social"></div>
 							</div>
 							<div class="member-info col-md-9">
@@ -71,13 +72,14 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="col-md-12">
-						<div class="team-member col-md-12"
-							style="height: 170px; background-color: #f5f5f5;">
+						<div class="team-member"
+							style="height: 150px; background-color: #f5f5f5;">
 							<div class="member-image col-md-3"
-								style="padding-left: 0px; padding-right: 0px">
-								<img class="img-responsive" src="images/abc.png" alt=""
-									style="width: 100%">
+								style="padding-left: 0px; padding-right: 0px;">
+								<img class="img-responsive" src="images/abc.png"
+									style="width: 100%; height: 150px">
 								<div class="member-social"></div>
 							</div>
 							<div class="member-info col-md-9">
@@ -94,13 +96,14 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="col-md-12">
-						<div class="team-member col-md-12"
-							style="height: 170px; background-color: #f5f5f5;">
+						<div class="team-member"
+							style="height: 150px; background-color: #f5f5f5;">
 							<div class="member-image col-md-3"
-								style="padding-left: 0px; padding-right: 0px">
-								<img class="img-responsive" src="images/abc.png" alt=""
-									style="width: 100%">
+								style="padding-left: 0px; padding-right: 0px;">
+								<img class="img-responsive" src="images/abc.png"
+									style="width: 100%; height: 150px">
 								<div class="member-social"></div>
 							</div>
 							<div class="member-info col-md-9">
@@ -117,6 +120,56 @@
 							</div>
 						</div>
 					</div>
+					
+					<div class="col-md-12">
+						<div class="team-member"
+							style="height: 150px; background-color: #f5f5f5;">
+							<div class="member-image col-md-3"
+								style="padding-left: 0px; padding-right: 0px;">
+								<img class="img-responsive" src="images/abc.png"
+									style="width: 100%; height: 150px">
+								<div class="member-social"></div>
+							</div>
+							<div class="member-info col-md-9">
+								<h6 class="glyphicon glyphicon-time pull-right">17-05-25</h6>
+								<h6 class="glyphicon glyphicon-eye-open pull-right">123,456&nbsp;</h6>
+
+								<h4>서울시 동대문 밤도깨비 야시장</h4>
+								<h6>청춘의 열정이 빚는 새로운 문화트렌디마켓</h6>
+								<h6 style="color: #B0B0B0;">
+									상상하고(Dream), 만들며(Design),즐기는(Play) 트렌디마켓.패션의 중심에서 시작되는 맛과 멋의
+									새로운 힙플레이스.어둠이 짙게 깔리면 시작되는 흥겨운 DJ공연과 패션쇼. 매주 DDP에서 열리는 축제의 밤. 가장
+									뜨겁고 열정 넘치는 젊음을 여러분께 선사합니다</br>
+								</h6>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-12">
+						<div class="team-member"
+							style="height: 150px; background-color: #f5f5f5;">
+							<div class="member-image col-md-3"
+								style="padding-left: 0px; padding-right: 0px;">
+								<img class="img-responsive" src="images/abc.png"
+									style="width: 100%; height: 150px">
+								<div class="member-social"></div>
+							</div>
+							<div class="member-info col-md-9">
+								<h6 class="glyphicon glyphicon-time pull-right">17-05-25</h6>
+								<h6 class="glyphicon glyphicon-eye-open pull-right">123,456&nbsp;</h6>
+
+								<h4>서울시 동대문 밤도깨비 야시장</h4>
+								<h6>청춘의 열정이 빚는 새로운 문화트렌디마켓</h6>
+								<h6 style="color: #B0B0B0;">
+									상상하고(Dream), 만들며(Design),즐기는(Play) 트렌디마켓.패션의 중심에서 시작되는 맛과 멋의
+									새로운 힙플레이스.어둠이 짙게 깔리면 시작되는 흥겨운 DJ공연과 패션쇼. 매주 DDP에서 열리는 축제의 밤. 가장
+									뜨겁고 열정 넘치는 젊음을 여러분께 선사합니다</br>
+								</h6>
+							</div>
+						</div>
+					</div>
+					<!-- end -->
+
 
 					<ul class="pagination" style="margin-bottom: 0%">
 						<li><a><<</a></li>
